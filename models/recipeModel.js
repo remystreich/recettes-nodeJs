@@ -4,15 +4,19 @@ const mongoose = require("mongoose") //import de mongoose
 const recipeShema = new mongoose.Schema({
     name : {
         type : String,
+        require: [true, "Le nom est obligatoire"]
     },
     ingredients : {
         type : Array,
+        require: [true, "Les ingrédients sont requis"]
     },
     steps :{
         type : String,
+        require: [true, "étapes obligatoires"]
     },
     author : {
         type : String,
+        default: 'Anonyme'
     }
 })
 
